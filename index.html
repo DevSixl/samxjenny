@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sam X Jenny</title>
+    <style>
+        .footer {
+            position: absolute;
+            bottom: 2%;
+            right: 2%;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        @media screen and (max-width: 250px) {
+            .footer {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <p class="hearts"></p>
+        <b class="footer">+1 Heart Every Day 🥰</b>
+    </div>
+    <script>
+        const hearts = document.querySelector('.hearts');
+        const initialDate = new Date('3/14/2023');
+        const msElapsed = new Date().getTime() - initialDate.getTime();
+        const daysElapsed = Math.ceil(msElapsed / (1000 * 3600 * 24)) - 1;
+        const emojis = ['❤️', '💙', '🧡', '💗', '💖', '💚', '💝', '💟', '🖤', '💜', '💘', '💕', '💛', '💞', '🤍', '🤎'];
+        
+        for(i = daysElapsed; i > 0; i--) {
+            hearts.innerHTML += emojis[Math.floor(Math.random() * (emojis.length - 1))];
+        }
+
+        document.title = ` ${daysElapsed} days!!!! Sam X Jenny`;
+    </script>
+</body>
+</html>
